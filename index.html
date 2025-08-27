@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Endenture | Ecommerce Website</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="header">
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">
+        <a href="index.html"><img src="images/logo.jpg" width="125" alt="Endenture logo" /></a>
+      </div>
+      <nav>
+        <ul id="MenuItems">
+          <li><a class="active" href="index.html">Home</a></li>
+          <li><a  href="products.html">Products</a></li>
+          <li><a  href="about.html">About</a></li>
+          <li><a  href="contact.html">Contact</a></li>
+          <li><a  href="account.html">Account</a></li>
+        </ul>
+      </nav>
+      <a class="cart-link" href="cart.html" aria-label="Cart">
+        <img src="images/cart.png" width="30" height="30" alt="Cart" />
+        <span id="cartCount" class="cart-badge">0</span>
+      </a>
+      <img src="images/menu.png" class="menu-icon" alt="Menu" onclick="menutoggle()" />
+    </div>
+  </div>
+    <div class="row container">
+      <div class="col-2">
+        <h1>Endure More.<br> Venture Further.</h1>
+        <p>Push past the moment you want to stop; that’s where progress starts noticing you.<br> Keep moving, great things are waiting just beyond the next step.</p>
+        <a href="products.html" class="btn">Explore Now &#8658;</a>
+      </div>
+      <div class="col-2">
+        <img src="images/cover.jpg" alt="Hero image">
+      </div>
+    </div>
+  </div>
+
+  <!-- Categories -->
+  <div class="categories">
+    <div class="small-container">
+      <div class="row">
+        <div class="col-3"><img src="images/category-1.jpg" alt="Category 1"></div>
+        <div class="col-3"><img src="images/category-2.jpg" alt="Category 2"></div>
+        <div class="col-3"><img src="images/category-3.jpg" alt="Category 3"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured Products -->
+  <div class="small-container">
+    <h2 class="title">Featured Products</h2>
+    <div class="row">
+      <div class="col-4 card">
+        <a href="product-details.html?id=hikingstick"><img src="images/product-3.jpg" alt="Black Diamond Hiking Stick"></a>
+        <h4><a href="product-details.html?id=hikingstick">Black Diamond Hiking Stick</a></h4>
+        <div class="rating">
+          <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
+        </div>
+        <p class="price">$199.00</p>
+      </div>
+      <div class="col-4 card">
+        <a href="product-details.html?id=jacket"><img src="images/product-1.jpg" alt="Waterproof Jacket"></a>
+        <h4><a href="product-details.html?id=jacket">Waterproof Jacket</a></h4>
+        <div class="rating">
+          <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>
+        </div>
+        <p class="price">$499.00</p>
+      </div>
+      <div class="col-4 card">
+        <a href="product-details.html?id=backpack"><img src="images/product-2.jpg" alt="Light-Weight Backpack"></a>
+        <h4><a href="product-details.html?id=backpack">Light-Weight Backpack</a></h4>
+        <div class="rating">
+          <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
+        </div>
+        <p class="price">$249.00</p>
+      </div>
+    </div>
+
+    <h2 class="title">Latest Products</h2>
+    <div class="row">
+      <div class="col-4 card">
+        <a href="product-details.html?id=waterbottle"><img src="images/product-4.jpg" alt="Water Bottle"></a>
+        <h4><a href="product-details.html?id=waterbottle">Water Bottle</a></h4>
+        <div class="rating">
+          <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>
+        </div>
+        <p class="price">$39.00</p>
+      </div>
+      <div class="col-4 card">
+        <a href="product-details.html?id=boots"><img src="images/product-5.jpg" alt="Waterproof Hiking Boots"></a>
+        <h4><a href="product-details.html?id=boots">Waterproof Hiking Boots</a></h4>
+        <div class="rating">
+          <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
+        </div>
+        <p class="price">$149.00</p>
+      </div>
+      <div class="col-4 card">
+        <a href="product-details.html?id=gloves"><img src="images/product-6.jpg" alt="Fleece Glove with Hardloop"></a>
+        <h4><a href="product-details.html?id=gloves">Fleece Glove with Hardloop</a></h4>
+        <div class="rating">
+          <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
+        </div>
+        <p class="price">$65.00</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Offer -->
+  <div class="offer">
+    <div class="small-container">
+      <div class="row">
+        <div class="col-2"><img src="images/exclusive.jpg" class="offer-img" alt="Exclusive exoskeleton pants"></div>
+        <div class="col-2">
+          <p>Exclusively Available Here in Endenture</p>
+          <h1>Arc'teryx MO/GO Powered Exoskeleton Pants</h1>
+          <small>Arc’teryx and Skip’s MO/GO powered exoskeleton pants use lightweight electric motors and carbon-fiber braces to boost leg strength by up to 40% uphill, ease descent impact, and make you feel as much as 30 lb lighter.</small><br>
+          <a href="product-details.html?id=jacket" class="btn">Buy Now &#8658;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonials -->
+  <div class="testimonial">
+    <div class="small-container">
+      <div class="row">
+        <div class="col-3">
+          <i class="fa fa-quote-left"></i>
+          <p>This smart exo pant has been a game changer for me, providing uphill power, downhill cushioning, and all‑day support.</p>
+          <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+          <img src="images/customer1.jpeg" alt="Customer 1">
+          <h3>Martha Tucker</h3>
+        </div>
+        <div class="col-3">
+          <i class="fa fa-quote-left"></i>
+          <p>These powered pants made my hike feel effortless—like having supercharged legs the whole way!</p>
+          <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></div>
+          <img src="images/customer2.jpeg" alt="Customer 2">
+          <h3>Jason Smith</h3>
+        </div>
+        <div class="col-3">
+          <i class="fa fa-quote-left"></i>
+          <p>Incredible comfort and support—felt 30 pounds lighter and conquered trails I never thought I could!</p>
+          <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+          <img src="images/customer3.jpg" alt="Customer 3">
+          <h3>Patrick Simons</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Brands -->
+  <div class="brands">
+    <div class="small-container">
+      <div class="row">
+        <div class="col-5"><img src="images/brand1.png" alt="Brand 1"></div>
+        <div class="col-5"><img src="images/brand2.png" alt="Brand 2"></div>
+        <div class="col-5"><img src="images/brand3.jpg" alt="Brand 3"></div>
+        <div class="col-5"><img src="images/brand4.png" alt="Brand 4"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-col-1">
+          <h3>Download Our App</h3>
+          <p>Download App for Android and iOS mobile phone.</p>
+          <div class="app-logo">
+            <a href="#"><img src="images/play-store.jpg" alt="Google Play"></a>
+            <a href="#"><img src="images/app-store.png" alt="App Store"></a>
+          </div>
+        </div>
+        <div class="footer-col footer-col-2">
+          <img src="images/logo.jpg" alt="Logo">
+          <p>Our purpose is to empower more people to get outside and go farther, by offering durable, responsibly made gear and adaptable apparel.</p>
+        </div>
+        <div class="footer-col footer-col-3">
+          <h3>Useful Links</h3>
+          <ul class="footer-links">
+            <li><a href="#">Coupons</a></li>
+            <li><a href="#">Blog Post</a></li>
+            <li><a href="#">Return Policy</a></li>
+            <li><a href="#">Join Affiliate</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-col-4">
+          <h3>Follow us</h3>
+          <ul class="footer-links">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">X</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">TikTok</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <p class="copyright">Copyright 2025 – Endenture</p>
+    </div>
+  </div>
+  
+  <script src="app.js" defer></script>
+</body>
+</html>
