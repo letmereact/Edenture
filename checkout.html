@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — Endenture</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">
+        <a href="index.html"><img src="images/logo.jpg" width="125" alt="Endenture logo" /></a>
+      </div>
+      <nav>
+        <ul id="MenuItems">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="account.html">Account</a></li>
+        </ul>
+      </nav>
+      <a class="cart-link" href="cart.html" aria-label="Cart">
+        <img src="images/cart.png" width="30" height="30" alt="Cart" />
+        <span id="cartCount" class="cart-badge">0</span>
+      </a>
+      <img src="images/menu.png" class="menu-icon" alt="Menu" onclick="menutoggle()" />
+    </div>
+  </div>
+
+  <div class="small-container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / <a href="cart.html">Cart</a> / Checkout</div>
+    <h2 class="title">Checkout</h2>
+
+    <div class="row">
+      <div class="col-2">
+        <div class="card">
+          <h3 style="margin:0 0 8px;">Order Summary</h3>
+          <table class="cart-table" id="checkoutTable">
+            <thead><tr><th>Product</th><th>Qty</th><th>Total</th></tr></thead>
+            <tbody></tbody>
+          </table>
+          <div class="cart-totals">
+            <strong>Total:</strong> <span id="checkoutTotal">$0.00</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="card">
+          <h3 style="margin:0 0 8px;">Payment</h3>
+          <label for="cardNo">Card number</label>
+          <input id="cardNo" class="input" placeholder="4242 4242 4242 4242">
+          <label for="exp">Expiry</label>
+          <input id="exp" class="input" placeholder="MM/YY">
+          <label for="cvc">CVC</label>
+          <input id="cvc" class="input" placeholder="CVC">
+          <br>
+          <button id="payNow" class="btn">Pay Now</button>
+          <p class="hint">Demo only — no real payment is processed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-col-1">
+          <h3>Download Our App</h3>
+          <p>Download App for Android and iOS mobile phone.</p>
+          <div class="app-logo">
+            <a href="#"><img src="images/play-store.jpg" alt="Google Play"></a>
+            <a href="#"><img src="images/app-store.png" alt="App Store"></a>
+          </div>
+        </div>
+        <div class="footer-col footer-col-2">
+          <img src="images/logo.jpg" alt="Logo">
+          <p>Our purpose is to empower more people to get outside and go farther, by offering durable, responsibly made gear and adaptable apparel.</p>
+        </div>
+        <div class="footer-col footer-col-3">
+          <h3>Useful Links</h3>
+          <ul class="footer-links">
+            <li><a href="#">Coupons</a></li>
+            <li><a href="#">Blog Post</a></li>
+            <li><a href="#">Return Policy</a></li>
+            <li><a href="#">Join Affiliate</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-col-4">
+          <h3>Follow us</h3>
+          <ul class="footer-links">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">X</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">TikTok</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <p class="copyright">Copyright 2025 – Endenture</p>
+    </div>
+  </div>
+
+  <script src="app.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const tbody = document.querySelector('#checkoutTable tbody');
+      const totalEl = document.getElementById('checkoutTotal');
+      const data = cartTotals();
+      if (data.items.length === 0){
+        tbody.innerHTML = '<tr><td colspan="3">Your cart is empty. <a href="products.html">Add items</a> to proceed.</td></tr>';
+      } else {
+        tbody.innerHTML = data.items.map(it => `<tr><td>${it.name}</td><td>${it.qty}</td><td>$${(it.qty*it.price).toFixed(2)}</td></tr>`).join('');
+      }
+      totalEl.textContent = '$' + data.total.toFixed(2);
+
+      document.getElementById('payNow').addEventListener('click', function(){
+        const { items } = cartTotals();
+        if (items.length === 0) { alert('Your cart is empty.'); return; }
+        alert('Demo: payment captured! Thank you for your order.');
+        localStorage.removeItem('endenture.cart.v1');
+        updateCartBadge();
+        location.href = 'index.html';
+      });
+    });
+  </script>
+</body>
+</html>

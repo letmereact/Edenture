@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account — Endenture</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    .account-wrapper { max-width: 980px; margin: 40px auto; }
+    .auth-card { background:#fff; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,.06); padding: 28px; }
+    .auth-tabs { display:flex; gap:20px; border-bottom:1px solid #eee; }
+    .auth-tab { padding:12px 4px; cursor:pointer; color:#666; border-bottom:2px solid transparent; font-weight:600; }
+    .auth-tab.active { color:var(--brand); border-color:var(--brand); }
+    .auth-panel { display:none; padding-top:16px; }
+    .auth-panel.active { display:block; }
+    .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .form-grid.full { grid-template-columns:1fr; }
+    .field { display:flex; flex-direction:column; gap:6px; }
+    .field label { font-weight:600; color:#333; }
+    .error { color:#b00020; font-size: 13px; }
+    .hint { color:#666; font-size: 13px; }
+    .actions { display:flex; align-items:center; gap:12px; margin-top: 8px; }
+    @media (max-width: 800px){ .form-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">
+        <a href="index.html"><img src="images/logo.jpg" width="125" alt="Endenture logo" /></a>
+      </div>
+      <nav>
+        <ul id="MenuItems">
+          <li><a  href="index.html">Home</a></li>
+          <li><a  href="products.html">Products</a></li>
+          <li><a  href="about.html">About</a></li>
+          <li><a  href="contact.html">Contact</a></li>
+          <li><a class="active" href="account.html">Account</a></li>
+        </ul>
+      </nav>
+      <a class="cart-link" href="cart.html" aria-label="Cart">
+        <img src="images/cart.png" width="30" height="30" alt="Cart" />
+        <span id="cartCount" class="cart-badge">0</span>
+      </a>
+      <img src="images/menu.png" class="menu-icon" alt="Menu" onclick="menutoggle()" />
+    </div>
+  </div>
+  <div class="small-container account-wrapper">
+    <h2 class="title">Your Account</h2>
+    <div class="row">
+      <div class="col-2">
+        <div class="auth-card" role="region" aria-labelledby="authHeading">
+          <h3 id="authHeading" style="margin-top:0">Sign in or create your account</h3>
+          <div class="auth-tabs" role="tablist">
+            <button class="auth-tab active" role="tab" aria-selected="true" data-tab="login">Login</button>
+            <button class="auth-tab" role="tab" aria-selected="false" data-tab="register">Register</button>
+          </div>
+          <form id="loginPanel" class="auth-panel active" role="tabpanel" aria-labelledby="loginTab" novalidate>
+            <div class="form-grid full">
+              <div class="field">
+                <label for="loginEmail">Email</label>
+                <input class="input" id="loginEmail" name="loginEmail" type="email" placeholder="you@example.com" required>
+                <div class="error" id="loginEmailErr" aria-live="polite"></div>
+              </div>
+              <div class="field">
+                <label for="loginPassword">Password</label>
+                <input class="input" id="loginPassword" name="loginPassword" type="password" placeholder="••••••••" required minlength="6">
+                <div class="error" id="loginPasswordErr" aria-live="polite"></div>
+              </div>
+            </div>
+            <div class="actions">
+              <button type="submit" class="btn">Login</button>
+              <label class="muted"><input type="checkbox" id="rememberMe"> Remember me</label>
+            </div>
+            <p class="hint">Demo only: credentials are matched against locally stored registrations.</p>
+            <div class="error" id="loginFormErr" aria-live="polite" style="margin-top:8px;"></div>
+            <div class="success" id="loginSuccess" style="display:none;margin-top:8px;">Welcome back! You are now logged in.</div>
+          </form>
+          <form id="registerPanel" class="auth-panel" role="tabpanel" aria-labelledby="registerTab" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="regFirst">First name</label>
+                <input class="input" id="regFirst" name="regFirst" type="text" placeholder="Jane" required>
+                <div class="error" id="regFirstErr" aria-live="polite"></div>
+              </div>
+              <div class="field">
+                <label for="regLast">Last name</label>
+                <input class="input" id="regLast" name="regLast" type="text" placeholder="Doe" required>
+                <div class="error" id="regLastErr" aria-live="polite"></div>
+              </div>
+              <div class="field" style="grid-column:1/-1;">
+                <label for="regEmail">Email <span class="hint">(required—used as your login ID)</span></label>
+                <input class="input" id="regEmail" name="regEmail" type="email" placeholder="you@example.com" required>
+                <div class="error" id="regEmailErr" aria-live="polite"></div>
+              </div>
+              <div class="field" style="grid-column:1/-1;">
+                <label for="regPassword">Password</label>
+                <input class="input" id="regPassword" name="regPassword" type="password" placeholder="Minimum 6 characters" minlength="6" required>
+                <div class="error" id="regPasswordErr" aria-live="polite"></div>
+              </div>
+              <div class="field" style="grid-column:1/-1;">
+                <label for="regConfirm">Confirm password</label>
+                <input class="input" id="regConfirm" name="regConfirm" type="password" placeholder="Re-enter password" minlength="6" required>
+                <div class="error" id="regConfirmErr" aria-live="polite"></div>
+              </div>
+            </div>
+            <div class="actions">
+              <button type="submit" class="btn">Create account</button>
+            </div>
+            <p class="hint">By creating an account you agree to our Terms and Privacy Policy.</p>
+            <div class="success" id="registerSuccess" style="display:none;margin-top:8px;">Thanks! Your account has been created. You can log in now.</div>
+          </form>
+        </div>
+      </div>
+      <div class="col-2">
+        <img src="images/image1.png" alt="Illustration" style="max-width:100%; border-radius:12px; box-shadow:0 10px 24px rgba(0,0,0,.08)">
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-col-1">
+          <h3>Download Our App</h3>
+          <p>Download App for Android and iOS mobile phone.</p>
+          <div class="app-logo">
+            <a href="#"><img src="images/play-store.jpg" alt="Google Play"></a>
+            <a href="#"><img src="images/app-store.png" alt="App Store"></a>
+          </div>
+        </div>
+        <div class="footer-col footer-col-2">
+          <img src="images/logo.jpg" alt="Logo">
+          <p>Our purpose is to empower more people to get outside and go farther, by offering durable, responsibly made gear and adaptable apparel.</p>
+        </div>
+        <div class="footer-col footer-col-3">
+          <h3>Useful Links</h3>
+          <ul class="footer-links">
+            <li><a href="#">Coupons</a></li>
+            <li><a href="#">Blog Post</a></li>
+            <li><a href="#">Return Policy</a></li>
+            <li><a href="#">Join Affiliate</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-col-4">
+          <h3>Follow us</h3>
+          <ul class="footer-links">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">X</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">TikTok</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <p class="copyright">Copyright 2025 – Endenture</p>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+  <script src="app.js" defer></script>
+</body>
+</html>

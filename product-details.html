@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details — Endenture</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">
+        <a href="index.html"><img src="images/logo.jpg" width="125" alt="Endenture logo" /></a>
+      </div>
+      <nav>
+        <ul id="MenuItems">
+          <li><a  href="index.html">Home</a></li>
+          <li><a class="active" href="products.html">Products</a></li>
+          <li><a  href="about.html">About</a></li>
+          <li><a  href="contact.html">Contact</a></li>
+          <li><a  href="account.html">Account</a></li>
+        </ul>
+      </nav>
+      <a class="cart-link" href="cart.html" aria-label="Cart">
+        <img src="images/cart.png" width="30" height="30" alt="Cart" />
+        <span id="cartCount" class="cart-badge">0</span>
+      </a>
+      <img src="images/menu.png" class="menu-icon" alt="Menu" onclick="menutoggle()" />
+    </div>
+  </div>
+  <div class="small-container" id="productDetail">
+    <div class="breadcrumb"><a href="index.html">Home</a> / <a href="products.html">Products</a> / <span id="prodNameCrumb">Product</span></div>
+
+    <div class="row single-product">
+      <!-- Gallery -->
+      <div class="col-2">
+        <div class="product-gallery">
+          <img id="heroImg" class="product-hero" src="" alt="Product">
+          <div id="thumbs" class="thumbs"></div>
+        </div>
+      </div>
+
+      <!-- Info -->
+      <div class="col-2">
+        <h1 id="prodName">Product Name</h1>
+        <div class="rating" aria-label="Rating">
+          <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>
+        </div>
+        <div class="price-row">
+          <div id="prodPrice" class="price">$0.00</div>
+          <span class="pill">Free Shipping</span>
+          <span class="pill">2-Year Warranty</span>
+        </div>
+        <p id="prodDesc">Description goes here.</p>
+
+        <div class="options">
+          <div class="opt-inline">
+            <label for="qty" style="margin-right:6px;">Qty</label>
+            <input id="qty" class="qty-box" type="number" min="1" value="1">
+          </div>
+        </div>
+
+        <a href="cart.html" class="btn" id="addToCartBtn">Add to Cart &#43;</a>
+        <p class="policy">• Free 30‑day returns • Ships in 24 hours • Carbon‑neutral delivery</p>
+
+        <hr class="divider">
+
+        <!-- Tabs -->
+        <div class="tabs" role="tablist">
+          <div class="tab active" data-tab="desc" role="tab" aria-selected="true">Description</div>
+          <div class="tab" data-tab="specs" role="tab" aria-selected="false">Specs</div>
+          <div class="tab" data-tab="care" role="tab" aria-selected="false">Care</div>
+        </div>
+        <div id="desc" class="tab-panel active" role="tabpanel">
+          A waterproof (20k), windproof shell with fully taped seams, helmet‑compatible hood, pit zips, and YKK® VISLON zippers. Trim fit layers over midweight insulation.
+        </div>
+        <div id="specs" class="tab-panel" role="tabpanel">
+          <ul>
+            <li>Weight: 420 g (M)</li>
+            <li>Fabric: 3L nylon ripstop, PFC‑free DWR</li>
+            <li>Fit: Articulated, hip‑length</li>
+            <li>Pockets: 2 hand, 1 chest, 1 internal stash</li>
+          </ul>
+        </div>
+        <div id="care" class="tab-panel" role="tabpanel">
+          Machine wash cold, gentle. Tumble dry low with clean tennis balls to reactivate DWR. Do not bleach or dry clean.
+        </div>
+      </div>
+    </div>
+
+    <!-- Related products -->
+    <div class="related">
+      <h2 class="title">You might also like</h2>
+      <div class="row">
+        <div class="col-4">
+          <a href="product-details.html?id=backpack"><img src="images/product-2.jpg" alt="Light-Weight Backpack"></a>
+          <h4>Light-Weight Backpack</h4>
+          <p>$249.00</p>
+        </div>
+        <div class="col-4">
+          <a href="product-details.html?id=hikingstick"><img src="images/product-3.jpg" alt="Black Diamond Hiking Stick"></a>
+          <h4>Black Diamond Hiking Stick</h4>
+          <p>$199.00</p>
+        </div>
+        <div class="col-4">
+          <a href="product-details.html?id=boots"><img src="images/product-5.jpg" alt="Waterproof Hiking Boots"></a>
+          <h4>Waterproof Hiking Boots</h4>
+          <p>$149.00</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-col-1">
+          <h3>Download Our App</h3>
+          <p>Download App for Android and iOS mobile phone.</p>
+          <div class="app-logo">
+            <a href="#"><img src="images/play-store.jpg" alt="Google Play"></a>
+            <a href="#"><img src="images/app-store.png" alt="App Store"></a>
+          </div>
+        </div>
+        <div class="footer-col footer-col-2">
+          <img src="images/logo.jpg" alt="Logo">
+          <p>Our purpose is to empower more people to get outside and go farther, by offering durable, responsibly made gear and adaptable apparel.</p>
+        </div>
+        <div class="footer-col footer-col-3">
+          <h3>Useful Links</h3>
+          <ul class="footer-links">
+            <li><a href="#">Coupons</a></li>
+            <li><a href="#">Blog Post</a></li>
+            <li><a href="#">Return Policy</a></li>
+            <li><a href="#">Join Affiliate</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-col-4">
+          <h3>Follow us</h3>
+          <ul class="footer-links">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">X</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">TikTok</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <p class="copyright">Copyright 2025 – Endenture</p>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+  <script src="app.js" defer></script>
+</body>
+</html>

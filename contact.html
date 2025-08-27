@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Endenture</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">
+        <a href="index.html"><img src="images/logo.jpg" width="125" alt="Endenture logo" /></a>
+      </div>
+      <nav>
+        <ul id="MenuItems">
+          <li><a  href="index.html">Home</a></li>
+          <li><a  href="products.html">Products</a></li>
+          <li><a  href="about.html">About</a></li>
+          <li><a class="active" href="contact.html">Contact</a></li>
+          <li><a  href="account.html">Account</a></li>
+        </ul>
+      </nav>
+      <a class="cart-link" href="cart.html" aria-label="Cart">
+        <img src="images/cart.png" width="30" height="30" alt="Cart" />
+        <span id="cartCount" class="cart-badge">0</span>
+      </a>
+      <img src="images/menu.png" class="menu-icon" alt="Menu" onclick="menutoggle()" />
+    </div>
+  </div>
+  <div class="small-container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Contact</div>
+    <h2 class="title">Contact Us</h2>
+    <p>Questions? Email <a href="mailto:support@example.com">support@example.com</a> and we’ll get back to you.</p>
+    <form class="card" style="max-width:560px; padding:16px">
+      <label for="name">Name</label>
+      <input id="name" class="input" placeholder="Your name">
+      <label for="email">Email</label>
+      <input id="email" type="email" class="input" placeholder="you@example.com">
+      <label for="msg">Message</label>
+      <textarea id="msg" class="input" rows="5" placeholder="How can we help?"></textarea>
+      <br>
+      <button type="button" class="btn">Send</button>
+    </form>
+  </div>
+  <div class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-col-1">
+          <h3>Download Our App</h3>
+          <p>Download App for Android and iOS mobile phone.</p>
+          <div class="app-logo">
+            <a href="#"><img src="images/play-store.jpg" alt="Google Play"></a>
+            <a href="#"><img src="images/app-store.png" alt="App Store"></a>
+          </div>
+        </div>
+        <div class="footer-col footer-col-2">
+          <img src="images/logo.jpg" alt="Logo">
+          <p>Our purpose is to empower more people to get outside and go farther, by offering durable, responsibly made gear and adaptable apparel.</p>
+        </div>
+        <div class="footer-col footer-col-3">
+          <h3>Useful Links</h3>
+          <ul class="footer-links">
+            <li><a href="#">Coupons</a></li>
+            <li><a href="#">Blog Post</a></li>
+            <li><a href="#">Return Policy</a></li>
+            <li><a href="#">Join Affiliate</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-col-4">
+          <h3>Follow us</h3>
+          <ul class="footer-links">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">X</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">TikTok</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <p class="copyright">Copyright 2025 – Endenture</p>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+  <script src="app.js" defer></script>
+</body>
+</html>
